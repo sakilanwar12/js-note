@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-gray-900 hover:underline;
+  }
+
+  .btn {
+    @apply h-9 px-5 rounded-md border border-gray-300 text-sm font-medium text-gray-900 hover:text-sky-950;
+  }
+}

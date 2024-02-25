@@ -36,29 +36,52 @@
           <a href="/" class="nav-link">Introduction</a>
         </div>
       </div>
-      <div class="flex-1 grid grid-cols-3  gap-8 ">
-        <div class="flex flex-col items-center mt-20">
-          <h3>JavaScript can change html content.</h3>
-          <button class="btn mt-4 ">Change Content</button>
+      <div class="flex-1 grid grid-cols-2 items-center  gap-8 ">
+        <div class="flex flex-col items-center ">
+          <h3 id="text">JavaScript can change html content.</h3>
+          <button class="btn mt-4" onclick="changeContent()">Change Content</button>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center ">
           <div class="h-[210px] rounded-lg">
-            <img src="./src/images/img-1.jpg" class="w-full h-full object-cover rounded-lg" />
+            <img src="./src/images/img-1.jpg" class="w-full h-full object-cover rounded-lg" id="image" />
           </div>
-          <button class="btn mt-4">Change Image</button>
+          <button class="btn mt-4" onclick="changeImage()">Change Image</button>
         </div>
         <div class="flex flex-col items-center">
-          <div class="h-[210px] rounded-lg w-full bg-sky-200"></div>
-          <button class="btn mt-4">Toggle</button>
+          <div class="h-[210px] rounded-lg w-full bg-sky-200" id="box"></div>
+          <button class="btn mt-4" onclick="toggle()">Toggle</button>
         </div>
         <div class="flex flex-col items-center">
-          <h2 class="text-sm font-medium text-gray-700">Lorem, ipsum dolor.</h2>
-          <button class="btn mt-4">Change Style</button>
+          <h2 class="text-sm font-medium text-gray-700" id="para">Lorem, ipsum dolor.</h2>
+          <button class="btn mt-4" onclick="changeStyle()">Change Style</button>
         </div>
       </div>
     </div>
   </div>
-
+  <script>
+    function changeContent() {
+      const textEl = document.getElementById("text");
+      textEl.innerText = "Hello Programmer!"
+    }
+    function changeImage() {
+      const picture = document.getElementById("image");
+      picture.src = "./src/images/img-2.jpg"
+    }
+    function toggle() {
+      const box = document.getElementById("box");
+      if (box.style.display === "block") {
+        box.style.display = "none"
+      } else {
+        box.style.display = "block"
+      }
+    }
+    function changeStyle() {
+      const para = document.getElementById("para");
+      para.style.fontSize = "30px";
+      para.style.color = "red";
+      para.style.marginBottom = "20px";
+    }
+  </script>
 </body>
 
 </html>
